@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+
+
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : mergen \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+Fermat's Little Theorem states that if \textit{p} is prime and \textit{a} is an integer not divisible by \textit{p}, then\\
+\hspace*{1cm} \[a^{p-1}\equiv 1 (\textbf{\textit{mod} } p)\] \\
+Furthermore, for every integer \textit{a} we have\\
+\hspace*{1cm} \[a^{p}\equiv a (\textbf{\textit{mod} } p)\] \\
+By applying that theorem where \textit{p} is a prime, \textit{x} is a positive integer which is not divisible by \textit{p}, and \textit{y} is the smallest positive integer that \[x^{y}\equiv 1 (\textbf{\textit{mod} } p)\]\\
+We can imply that \textit{y = (p-1)c} for some constant \textit{c} $\in$ Z$^{+}$. However, as indicated \textit{y} is the smallest positive integer that can ensure the given equivalence, then \textit{c} be 1 for which \textit{y} has its smallest value. Therefore, since we obtained \textit{y = (p-1)}, we can simply say \textit{y} divides \textit{(p-1)} and denote that with \textit{y} $\mid$ \textit{(p-1)}. \\
+
+
+
+\section*{Answer 2}
+\textbf{\textit{Proof by Contradiction:} }Let's assume that 169 divides (2n$^2$+10n-7), such that 169 $\mid$ (2n$^2$+10n-7). Then, it is clear that (2n$^2$+10n-7) is 169k, since $\forall$n(n $\in$ Z$^+$ $\wedge$ (2n$^2$+10n-7) $>$ 0) k is a positive integer that is $\forall$k $\in$ Z$^+$. By subtracting 169k from both sides, we obtain \\
+\[2n^2+10n-(7+169k) = 0\]\\
+We can now find the roots of the equation by first finding that discriminant($\Delta$ = b$^2$ - 4ac), where a = 2, b = 10, and c = -(7+169k).\\
+\[\Delta = 10^2 - 4*2*(-7-169k) = 156 + 8*169k\]\\
+At this point, since $\Delta$ consist of integer multipliers, remember that $\forall$k $\in$ Z$^+$, $\Delta$ must be an integer. For that equation to have some integer valued roots, $\sqrt{\Delta}$ must be a rational number. Therefore, for $\sqrt{\Delta}$ to be a rational number $\sqrt{\Delta}$ must be a perfect square. \\
+\[\Delta = 156 + 8*169k = 2^2*13*(3+26k)  \]\\
+For $\Delta$ to be a perfect square (3+26k) part must contain at least one 13 multiplier so that 13$\mid$(3+26k). However, $\forall$k((3+26k) $\equiv$ 3 (\textbf{\textit{mod}} 13)) contradicts with 13$\mid$(3+26k). Since it is a contradiction, our assumption 169 divides (2n$^2$+10n-7) was incorrect and by contradiction it is to be concluded as \\
+\[169\not| (2n^2 + 10n - 7)\]\\
+\section*{Answer 3}
+If a $\equiv$ b (\textbf{\textit{mod} } m), by the definition of congruence, we know that \textit{m$\mid$(a-b)}. This means that there is an integer \textit{k} $\in$ Z, such that \textit{(a-b) = km}.  Then, \textit{n} divides \textit{km}. Since \textbf{\textit{gcd}(m,n)} = 1, we have \textit{n} divides \textit{k}, so \textit{k} = \textit{nt} for some t $\in$ Z. Therefore, \textit{(a-b)} = \textit{km} = \textit{ntm} such that \textit{nm} divides \textit{(a-b)}. Hence,  \\
+\hspace*{1cm} \[a \equiv b (\textbf{\textit{mod} } nm)\] \\
+
+\section*{Answer 4}
+\hspace*{0.6cm} \textbf{\textit{Solution:} } Let \textit{P(n)} be the proposition that the sum of the first n terms of j(j + 1)(j + 2)$\cdots$ (j+k-1) for j $\in$ \{1,2,...,n\} is\\
+\[(\textit{\textbf{a}}) \hspace{1.8cm}\frac{n(n+1)(n+2)\cdots(n+k)}{(k+1)}\]  \\
+We must do two things to prove that \textit{P(n)} is true for n = 1,2,3,... . Namely, we must show that \textit{P(1)} is true and that the conditional statement \textit{P(t) implies P(t+1)} is true for t = 1,2,3,... .\\
+\vspace*{0.2cm}\\
+\hspace*{0.6cm} \textbf{\textit{Basis Step:} } \textit{P(1)} is true, because  \\
+\[1(2)(3)\cdots(k) = (k!) = \frac{1(1+1)(1+2)\cdots(k)(1+k)}{(k+1)}\]\\
+The leftmost side of this equation is factorial of \textit{k} because (k!) is the sum of the first term. The rightmost side of this equation is found by substituting 1 for n in the equation (\textit{\textbf{a}}). \\
+\vspace*{0.2cm}\\
+\hspace*{0.6cm} \textbf{\textit{Inductive Step:} } For the inductive hypothesis we assume that \textit{P(t)} holds for an arbitrary positive integer t. That is, we assume that \\
+\[\sum_{j=1}^{t}j(j + 1)(j + 2)\cdots (j+k-1)  = \frac{t(t+1)(t+2)\cdots(t+k)}{(k+1)}\]\\
+Under this assumption, it must be shown that \textit{P(t+1)} is true, namely, that\\
+\[\sum_{j=1}^{t+1}j(j + 1)(j + 2)\cdots (j+k-1)  = \frac{(t+1)(t+2)\cdots(t+k)(t+k+1)}{(k+1)}\]\\
+is also true.\\
+\vspace*{0.2cm}\\
+We observe that the summation of the right-hand side of \textit{P(t+1)} is (t+1)(t+2)$\cdots$(t+k) more than the summation of the right-hand side of \textit{P(t)}. Our strategy will be to add (t+1)(t+2)$\cdots$(t+k) to the both sides of of the equation in \textit{P(t)} with and simplify the result algebraically to complete the inductive step.\\
+\[(\sum_{j=1}^{t}j(j + 1)(j + 2)\cdots (j+k-1)) + (t+1)(t+2)\cdots(t+k) \stackrel{\text{IH}}{=} \frac{t(t+1)(t+2)\cdots(t+k)}{(k+1)} +  (t+1)(t+2)\cdots(t+k)\]\\
+\[\hspace*{9.6cm}= (1 + \frac{t}{k+1})*((t+1)(t+2)(t+3)\cdots(t+k))\]\\
+\[\hspace*{9.6cm}= (\frac{t+k+1}{k+1})*((t+1)(t+2)(t+3)\cdots(t+k))\]\\
+\[\hspace*{8.6cm}= \frac{(t+1)(t+2)\cdots(t+k)(t+k+1)}{(k+1)}\]\\
+\vspace*{0.2cm}\\
+This last equation shows that \textit{P(t+1)} is true under the assumption that \textit{P(t)} is true. This completes the inductive step.\\
+\vspace*{0.2cm}\\
+We have completed the \textit{basis step} and the \textit{inductive step}, so by mathematical induction we know that \textit{\textbf{P(n)}} is true for all positive integers \textit{k} and \textit{n}.\\
+\vspace*{0.2cm}\\
+\hspace*{3.4cm}\textit{(P(1) $\wedge$ $\forall$t(P(t)$\xrightarrow{}$P(t+1)))$\xrightarrow{}$ $\forall$nP(n)}\\
+\section*{Answer 5}
+\hspace*{0.6cm} \textbf{\textit{Solution:} } Let \textit{P(n)} be the proposition that H$_n$ $\leq$  7$^n$ for n $\geq$ 0. \\
+\vspace*{0.2cm}\\
+\hspace*{0.6cm} \textbf{\textit{Basis Step:} } For base cases note that\\
+$\bullet$ For (n=0), P(0) is true because H$_0$ = 1 $\leq$  7$^0$ = 1,\\
+$\bullet$ For (n=1), P(1) is true because H$_1$ = 3 $\leq$  7$^1$ = 7,\\
+$\bullet$ For (n=2), P(0) is true because H$_2$ = 5 $\leq$  7$^2$ = 49.\\
+\vspace*{0.2cm}\\
+\hspace*{0.6cm} \textbf{\textit{Inductive Step:} } Let n $>$ 2. Assume that H$_i$ $\leq$  7$^i$ for all integers i with 0 $\leq$ i $<$ n. Consider H$_n$. By our inductive hypothesis, we know that\\
+\[H_n = 5*H_{n-1} + 5*H_{n-2} + 63*H_{n-3}\]\\
+\[\hspace*{0.4cm}\leq 5*7^{n-1} + 5*7^{n-2} + 63*7^{n-3}\]\\
+\[\hspace*{2.7cm}= 5*7^{2}*7^{n-3} + 5*7^{1}*7^{n-3} + 63*7^{0}*7^{n-3}\]\\
+\[\hspace*{1.2cm}= 245*7^{n-3} + 35*7^{n-3} + 63*7^{n-3}\]\\
+\[\hspace*{0.1cm}= 343*7^{n-3} = 7^{3}*7^{n-3} = 7^{n}\]\\
+\vspace*{0.2cm}\\
+Therefore, H$_n$ $\leq$  7$^n$ and result holds by strong induction.\\
+
+\end{document}

@@ -2,84 +2,151 @@
 #include <math.h>
 #include "the1.h"
 
-/*
- * This function gets a parameter that indicateswhether user will give initial values or not. If it evaluates false,
- * you will simply set all values of thearray -1. Otherwise, you will scan an integer from the user stating the number
- * of values that s/he willenter. User will enter that many integer index and value pairs. If the value for that index
- * is insertedbefore, or the index or the value is out of the range, you will simply ignore it.
-*/
+
 void initialize_the_tree(int binary_tree[MAX_LENGTH], int get_values_from_user) {
-    /* Silence is golden */
+    int i,num,val,ind,hold[MAX_LENGTH];	
+
+    for(i=0;i<MAX_LENGTH;i++){binary_tree[i]=-1;}
+    for(i=0;i<MAX_LENGTH;i++){hold[i]=0;}
+    
+    if(get_values_from_user!=0){
+        scanf("%d",&num);
+        i=0;
+        while(i<num){
+            i++;
+            scanf("%d %d",&ind,&val);
+            if(ind<MAX_LENGTH && hold[ind]==0){hold[ind] = 1;binary_tree[ind]=val;}
+            else{continue;}
+        }
+    }
 }
 
 
-/*
- * This function gets index of parent node, 'l'eft, 'r'ight or 'i'tself for where to insert and integer value.
- * If the value for the inserted node already exists, it ignores and does nothing.
- */
 void insert_node(int binary_tree[MAX_LENGTH], int node, char where, int value) {
-    /* Silence is golden */
+    int ind = node + (where=='l')*(node + 1) + (where=='r')*(node+2);
+    if(binary_tree[ind]==-1){binary_tree[ind]=value;}
 }
 
 
-/*
- * This method  gets  the  index  of  the  node  to  be  deleted.   If  a  node  is  to  be deleted, all of its
- * descendants will be also purged.  Deleting means putting -1 value to the proper area in the array.
- */
 void delete_node_rec(int binary_tree[MAX_LENGTH], int node) {
-    /* Silence is golden */
+    int loc,left,right;
+    left = 2*node+1;
+    right = 2*node+2;
+    loc = right<MAX_LENGTH;
+    
+    if(left<MAX_LENGTH && binary_tree[left]!=-1){
+        delete_node_rec(binary_tree,left);
+    }
+    if(loc && binary_tree[right]!=-1){
+        delete_node_rec(binary_tree,right);
+    }
+    if((right >= MAX_LENGTH||binary_tree[right]==-1) && (left >= MAX_LENGTH ||binary_tree[left]==-1)){
+        binary_tree[node]=-1;
+    }
 }
 
+void tabber(int dep){
+    if(dep==0){return;}
+    else{printf("\t");tabber(dep-1);}
+}
 
-/*
- * This is  a recursive function that prints the tree in in-order fashion. In other words, it will print the nodes 
- * starting from the left-most child and traverse the rest of the tree in that manner. Printing order will be 
- * <left-child, root, right-child>. It gets the index of the root and the depth value as control variable. Initial 
- * value of the depth will be the height of the tree. Be careful, any sub-tree can be given to the function.
- */
 void draw_binary_tree_rec(int binary_tree[MAX_LENGTH], int root, int depth) {
-    /* Silence is golden */
+    int left,right;
+    left = 2*root+1;
+    right = 2*root+2;
+    if(left<MAX_LENGTH && binary_tree[left]!=-1){
+        draw_binary_tree_rec(binary_tree,left,depth-1);
+         tabber(depth);
+        printf("%d\n",binary_tree[root]);
+    }
+
+    if((left>=MAX_LENGTH || binary_tree[left]==-1)&&binary_tree[root]!=-1){
+      tabber(depth);
+        printf("%d\n",binary_tree[root]);
+
+    }
+    
+    
+    if(right<MAX_LENGTH && binary_tree[right]!=-1){
+        draw_binary_tree_rec(binary_tree,right,depth-1);
+    }
 }
 
-/*
- * This is a recursive function that returns the height of the tree.  If given root does not have any child, its height
- * is 0.  Be careful, any sub-tree can be given to the function
- */
+int max(int a,int b){
+    if(a<=b){return b;}
+    else{return a;}
+} 
+int min(int a,int b){
+    if(a<b && a!=-1){return a;}
+    else{return b;}
+} 
+ 
 int find_height_of_tree_rec(int binary_tree[MAX_LENGTH], int root) {
-    return 0;
+    int left,right,loc;
+    left = 2*root+1;
+    right = 2*root+2;
+    loc = right<MAX_LENGTH;
+    
+    if(loc && binary_tree[right]==-1 && binary_tree[left]==-1){
+        return 0;
+    }
+    else if(loc && (binary_tree[right]!=-1 || binary_tree[left]!=-1)){
+        return 1+max(find_height_of_tree_rec(binary_tree,left),find_height_of_tree_rec(binary_tree,right));
+    }
+    else{
+        return 0;
+    }
 }
 
-/*
- * This is a recursive function that returns the minimum value given tree contains.
- * Be careful, any sub-tree can be given to the function.
- */
 int find_min_of_tree_rec(int binary_tree[MAX_LENGTH], int root) {
-    return MIN_VAL;
+    int left,right,loc;
+    left = 2*root+1;
+    right = 2*root+2;
+    loc = right<MAX_LENGTH;
+    
+    if(loc && binary_tree[right]==-1 && binary_tree[left]==-1){
+        return binary_tree[root];
+    }
+    else if(loc && (binary_tree[right]!=-1 || binary_tree[left]!=-1)){
+        return min(binary_tree[root],min(find_min_of_tree_rec(binary_tree,left),find_min_of_tree_rec(binary_tree,right)));
+    }
+    else{
+        return binary_tree[root];
+    }
 }
 
-/*
- * This is an iterative function that performs breadth-first search on the given tree.  If the value does not appear
- * in the given tree,  it returns -1.  Otherwise,  it returns the index of the first observation of the value.
- * It gets the index of the root and the integer value that is to be searched.  Be careful, any sub-tree can be given to
- * the function and you will apply level-wise search in the tree
- */
 int breadth_first_search_itr(int binary_tree[MAX_LENGTH], int root, int value) {
+    int lm,rm,temp1=root,temp2=root,i,lim;
+    
+    if(binary_tree[root]==value){return root;}
+    
+    while(2*temp1+1<=MAX_LENGTH){
+        lm=2*temp1+1;
+        rm=2*temp2+2;
+        lim = (rm<=MAX_LENGTH)*(rm) + (rm>MAX_LENGTH)*(MAX_LENGTH-1);
+    	for(i=lm;i<=lim;i++){
+            if(binary_tree[i]==value){return i;}
+            }   
+        temp1=lm;
+        temp2=rm;
+    }
     return -1;
 }
 
-/*
- * This is  a  recursive  function  that  performs  depth-first search on the given tree.  If the value does not appear
- * in the given tree,  it returns -1.  Otherwise,  itreturns the index of the first observation of the value.  It gets
- * the index of the root and the integer valuethat is to be searched.
- * Be careful, any sub-tree can be given to the function.
- */
 int depth_first_search_rec(int binary_tree[MAX_LENGTH], int root, int value) {
+    int loc = 2*root+2,x,y;
+    
+    
+    if(loc <= MAX_LENGTH){
+        x = depth_first_search_rec(binary_tree,2*root+1,value);
+        if(x!=-1){return x;}
+        y = depth_first_search_rec(binary_tree,2*root+2,value);
+        if(y!=-1){return y;}
+    }
+    if(binary_tree[root]==value){return root;}
     return -1;
 }
 
-/*
- * This is already given to you.
- */
 void print_binary_tree_values(int binary_tree[MAX_LENGTH]) {
     int i;
     for (i = 0; i < MAX_LENGTH; i++) {
@@ -87,6 +154,4 @@ void print_binary_tree_values(int binary_tree[MAX_LENGTH]) {
             printf("%d - %d\n", i, binary_tree[i]);
         }
     }
-
 }
-

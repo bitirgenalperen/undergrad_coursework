@@ -1,2 +1,2 @@
 # metu_ceng_hw
-HWs
+- Contains the take-home exams and homeworks

@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+\usepackage{indentfirst}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\section*{Student Information}
+
+Name : Mustafa Alperen Bitirgen\\
+
+ID : 2231496\\
+
+
+\section*{Answer 1}
+\text{By assuming that all the balls are equally likely to be chosen from the each box, we can show our}\\
+\text{calculations base on that assumption. Let the events L and M defined as follows:}\\
+\vspace*{0.2cm}\\
+\text{L = \{Chosen box\}}\\
+\text{M = \{Color of the chosen ball\}}\\
+\subsection*{a)}
+\[\text{P(M = G $\mid$ L = X) = $\frac{\text{number of outcomes in } \{M = G \cap L = X\}}{\text{number of outcomes in }\{L = X\}}$ = $\frac{2}{6}$ = 0.33$\overline{3}$} \]\\
+\subsection*{b)}
+\[\text{P(M = R) = P(M = R $\mid$ L = X)P(L = X) + P(M = R $\mid$ L = Y)P(L = Y)}\]\\
+\[\hspace*{-2cm} \text{ = $\frac{2}{6}$ $\frac{2}{5}$ + $\frac{1}{5}$ $\frac{3}{5}$ = 0.25$\overline{3}$}\]\\
+\subsection*{c)}
+\text{From the Law of Total Probability and Bayes Rule for two events, we can simplify our calculations}\\
+\text{to obtain the probability that we had chosen the box Y given that the ball we picked is blue.}\\
+\[\text{P(L = Y $\mid$ M = B) = $\frac{P(M = B \mid L = Y)P(L = Y)}{P(M = B)}$ } \]\\
+\text{By applying the Law of Total Probability; }\\
+\[\text{P(M = B) = P(M = B $\mid$ L = X)P(L = X) + P(M = B $\mid$ L = Y)P(L = Y)}\]\\
+\[\hspace*{-4cm}\text{ = $\frac{2}{6}$ $\frac{2}{5}$ + $\frac{2}{5}$ $\frac{3}{5}$ = 0.37$\overline{3}$}\]\\
+\[\hspace*{-5cm}\text{P(M = B $\mid$ L = Y)P(L = Y) = $\frac{2}{5}$ $\frac{3}{5}$ = 0.24}\]\\
+\text{Then our result becomes: }\\
+\[\text{P(L = Y $\mid$ M = B) = $\frac{0.24}{0.37\overline{3}}$ = 0.643} \]\\
+\section*{Answer 2}
+\subsection*{a)}
+\text{We need to prove or disprove the following:}\\
+\[\text{(A $\cap$ B = $\emptyset$) $\Longleftrightarrow$ ($\overline{A}$ $\cup$ $\overline{B}$ = $\Omega$)}\]\\
+\text{Then:}\\
+\[\text{A and B are mutually exclusive $\Longleftrightarrow$ P(A $\cap$ B) = 0}\]\\
+\[\hspace*{5.4cm}\text{$\Longleftrightarrow$ P($\overline{A \cap B}$) = 1}\]\\
+\[\hspace*{5.6cm}\text{$\Longleftrightarrow$ P($\overline{A}$ $\cup$ $\overline{B}$) = 1}\]\\
+\[\hspace*{7.4cm}\text{$\Longleftrightarrow$ $\overline{A}$ and $\overline{B}$ are exhaustive.}\]\\
+\subsection*{b)}
+\text{We need to give a counter example to disprove the statement.For that, let's define the events A, B, }\\
+\text{and C as the output of rolling a die:}\\
+\hspace*{2cm}\vspace*{1cm}\text{A = \{1,2,3\}, B = \{4,5,6\}, C = \{1,4\}}\\
+\text{$\overline{A}$, $\overline{B}$, and $\overline{C}$ are exhaustive because $\overline{A}$ $\cup$ $\overline{B}$ $\cup$ $\overline{C}$ = \{1, 2, 3, 4, 5, 6\}, i.e. P($\overline{A}$ $\cup$ $\overline{B}$ $\cup$ $\overline{C}$) = 1.}\\
+\text{A, B, C are not mutually exclusive because P(A $\cap$ C) = P(\{1\}) $\neq$ 0}\\
+\section*{Answer 3}
+\text{By using the definition of the Binomial Distribution and defining the event K as the number of}\\
+\text{ successes:}\\
+\text{K = \{Number of Successes\}}\\
+\[\text{P(k) = P(K = k) = $\binom{5}{k}$ $(\frac{2}{6})^{k}$ $(\frac{4}{6})^{5-k}$}\]\\
+\subsection*{a)}
+\[\text{P(2) = P(K = 2) = $\binom{5}{2}$ $(\frac{2}{6})^{2}$ $(\frac{4}{6})^{3}$ = $\frac{80}{243}$} = 0.329\]\\
+\subsection*{b)}
+\[\text{P(K $\geq$ 2) = $\sum_{k =2}^{5}$$\binom{5}{k}$ $(\frac{2}{6})^{k}$ $(\frac{4}{6})^{5-k}$}\]\\
+\[\text{ = $\binom{5}{2}$ $(\frac{2}{6})^{2}$ $(\frac{4}{6})^{3}$ + $\binom{5}{3}$ $(\frac{2}{6})^{3}$ $(\frac{4}{6})^{2}$ + $\binom{5}{4}$ $(\frac{2}{6})^{4}$ $(\frac{4}{6})^{1}$ + $\binom{5}{5}$ $(\frac{2}{6})^{5}$ $(\frac{4}{6})^{0}$}\]\\
+\[\text{$\frac{80}{243}$ + $\frac{40}{243}$ + $\frac{10}{243}$ + $\frac{1}{243}$ = $\frac{131}{243}$ = 0.539}\]\\
+\section*{Answer 4}
+\subsection*{a)}
+\[P(A=1,C=0) = \sum_{b\in B} P(A=1,B=b,C=0) = P(A=1,B=0,C=0) \text{ + } P(A=1,B=1,C=0)\]\\
+\[\hspace{3.4cm}= 0.06 + 0.09 = 0.15\]\\
+\subsection*{b)}
+\[P(B = 1) = \sum_{c\in C} \sum_{a\in A} P(A=a,B=1,C=c) = \sum_{c\in C} P(A=0,B=1,C=c) \text{ + }P(A=1,B=1,C=c)\]\\
+\[\text{= }P(A=0,B=1,C=0)\text{ +}P(A=0,B=1,C=1)\text{ +} P(A=1,B=1,C=0)\text{ +}P(A=1,B=1,C=1)\]\\
+\[\text{= } \text{0.21 + 0.02 + 0.09 + 0.08 = 0.40}\]\\
+\subsection*{c)}
+\text{From the definition, for the random variables A and B to be independent below equality must hold}\\
+\text{for all values of a and b such that a' $\in$ A and b' $\in$ B;}\\
+\[\text{P(A = a', B = b') = P(A = a') P(B = b') }\]\\
+\text{Let us, now, try to give a counter example to prove that random variables A and B are not independent.}\\
+\text{For convenience, let's choose the values a' = 0 and b' = 1, since we found P(B = 1) on part (b).We will}\\
+\text{examine if the below equality holds: }\\
+\[\text{P(A = 0, B = 1) = P(A = 0) P(B = 1) }\]\\
+\[P(A=0,B=1) = \sum_{c\in C} P(A=0,B=1,C=c) = P(A=0,B=1,C=0) \text{ + } P(A=0,B=1,C=1)\]\\
+\[\hspace{2.7cm}= 0.21 + 0.02 = 0.23\]\\
+\[P(A = 0) = \sum_{c\in C} \sum_{b\in B} P(A=0,B=b,C=c) = \sum_{c\in C} P(A=0,B=0,C=c) \text{ + }P(A=0,B=1,C=c)\]\\
+\[\text{= }P(A=0,B=0,C=0)\text{ +}P(A=0,B=0,C=1)\text{ +} P(A=0,B=1,C=0)\text{ +}P(A=0,B=1,C=1)\]\\
+\[\text{= } \text{0.14 + 0.08 + 0.21 + 0.02 = 0.45}\]\\
+\[0.23 = \text{P(A = 0, B = 1) $\neq$ P(A = 0) P(B = 1) = (0.45)(0.40) = 0.18}\]\\
+\text{Since we have given a counter example, we can simply say random variables A and B are \textbf{not independent}.}\\
+\subsection*{d)}
+\text{From the definition of conditionally independence, for the random variables A and B to be conditionally}\\
+\text{independent given C = 1, below equality must hold for all values of a and b such that a' $\in$ A and b' $\in$ B;}\\
+\[\text{P(A = a', B = b' $\mid$ C = 1) = P(A = a' $\mid$ C = 1) P(B = b' $\mid$ C = 1) }\]\\
+\text{Let us, now, try to give a counter example to prove that random variables A and B are not conditionally in-}\\
+\text{dependent given C = 1. We will examine if the above equality holds for all combinations of a' and b':}\\
+\[\textbf{(i) } \text{P(A = 0, B = 0 $\mid$ C = 1) = P(A = 0 $\mid$ C = 1) P(B = 0 $\mid$ C = 1) }\]\\
+\[\text{P(A = 0, B = 0 $\mid$ C = 1) = } \frac{P(A = 0, B = 0, C=1)}{P(C = 1)} \text{ = } \frac{0.08}{0.50} \text{ = 0.16}\]\\
+\[\text{P(A = 0 $\mid$ C = 1) = } \frac{P(A = 0, C=1)}{P(C = 1)} \text{ = } \frac{0.10}{0.50} \text{ = 0.20}\]\\
+\[\text{P(B = 0 $\mid$ C = 1) = } \frac{P(B = 0, C=1)}{P(C = 1)} \text{ = } \frac{0.40}{0.50} \text{ = 0.80}\]\\
+\[\text{ L = P(A = 0, B = 0 $\mid$ C = 1) = 0.16}\]\\
+\[\text{ M = P(A = 0 $\mid$ C = 1) P(B = 0 $\mid$ C = 1) = (0.20)(0.80) = 0.16}\]\\
+\text{Since L = M, equality of conditionally independence of random variables A and B given C = 1 holds}\\
+\text{for A = 0 and B = 0.}\\
+\vspace*{1.2cm}\\
+\[\textbf{(ii) } \text{P(A = 0, B = 1 $\mid$ C = 1) = P(A = 0 $\mid$ C = 1) P(B = 1 $\mid$ C = 1) }\]\\
+\[\text{P(A = 0, B = 1 $\mid$ C = 1) = } \frac{P(A = 0, B = 1, C=1)}{P(C = 1)} \text{ = } \frac{0.02}{0.50} \text{ = 0.04}\]\\
+\[\text{P(A = 0 $\mid$ C = 1) = } \frac{P(A = 0, C=1)}{P(C = 1)} \text{ = } \frac{0.10}{0.50} \text{ = 0.20}\]\\
+\[\text{P(B = 1 $\mid$ C = 1) = } \frac{P(B = 1, C=1)}{P(C = 1)} \text{ = } \frac{0.10}{0.50} \text{ = 0.20}\]\\
+\[\text{ L = P(A = 0, B = 1 $\mid$ C = 1) = 0.04}\]\\
+\[\text{ M = P(A = 0 $\mid$ C = 1) P(B = 1 $\mid$ C = 1) = (0.20)(0.80) = 0.04}\]\\
+\text{Since L = M, equality of conditionally independence of random variables A and B given C = 1 holds}\\
+\text{for A = 0 and B = 1.}\\
+\vspace*{1.2cm}\\
+\[\textbf{(iii) } \text{P(A = 1, B = 1 $\mid$ C = 1) = P(A = 1 $\mid$ C = 1) P(B = 1 $\mid$ C = 1) }\]\\
+\[\text{P(A = 1, B = 1 $\mid$ C = 1) = } \frac{P(A = 1, B = 1, C=1)}{P(C = 1)} \text{ = } \frac{0.08}{0.50} \text{ = 0.16}\]\\
+\[\text{P(A = 1 $\mid$ C = 1) = } \frac{P(A = 1, C=1)}{P(C = 1)} \text{ = } \frac{0.40}{0.50} \text{ = 0.80}\]\\
+\[\text{P(B = 1 $\mid$ C = 1) = } \frac{P(B = 1, C=1)}{P(C = 1)} \text{ = } \frac{0.10}{0.50} \text{ = 0.20}\]\\
+\[\text{ L = P(A = 0, B = 0 $\mid$ C = 1) = 0.16}\]\\
+\[\text{ M = P(A = 0 $\mid$ C = 1) P(B = 0 $\mid$ C = 1) = (0.20)(0.80) = 0.16}\]\\
+\text{Since L = M, equality of conditionally independence of random variables A and B given C = 1 holds}\\
+\text{for A = 1 and B = 1.}\\
+\vspace*{1.2cm}\\
+\[\textbf{(iv) } \text{P(A = 1, B = 0 $\mid$ C = 1) = P(A = 1 $\mid$ C = 1) P(B = 0 $\mid$ C = 1) }\]\\
+\[\text{P(A = 1, B = 0 $\mid$ C = 1) = } \frac{P(A = 1, B = 0, C=1)}{P(C = 1)} \text{ = } \frac{0.32}{0.50} \text{ = 0.64}\]\\
+\[\text{P(A = 1 $\mid$ C = 1) = } \frac{P(A = 1, C=1)}{P(C = 1)} \text{ = } \frac{0.40}{0.50} \text{ = 0.80}\]\\
+\[\text{P(B = 0 $\mid$ C = 1) = } \frac{P(B = 0, C=1)}{P(C = 1)} \text{ = } \frac{0.40}{0.50} \text{ = 0.80}\]\\
+\[\text{ L = P(A = 1, B = 0 $\mid$ C = 1) = 0.64}\]\\
+\[\text{ M = P(A = 1 $\mid$ C = 1) P(B = 0 $\mid$ C = 1) = (0.80)(0.80) = 0.64}\]\\
+\text{Since L = M, equality of conditionally independence of random variables A and B given C = 1 holds}\\
+\text{for A = 1 and B = 0.}\\
+\vspace*{0.4cm}\\
+\text{Since the conditionally independence equalities hold for all the values of random variables A and B, given}\\
+\text{C = 1; we can suggest that random variables A and B are \textbf{conditionally independent}.}\\
+\end{document}
+
+

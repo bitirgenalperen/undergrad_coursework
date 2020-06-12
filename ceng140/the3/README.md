@@ -1,3 +1,0 @@
-- Added samples
-- Added Makefile
-- Added hw description file

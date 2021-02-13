@@ -1,9 +1,0 @@
-Printing the linked list ...
-empty
-Printing the linked list ...
-2
-4
-6
-Printing the linked list ...
-2
-6
